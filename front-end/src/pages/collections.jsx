@@ -1,11 +1,16 @@
 import NavBar from '../components/navbar';
+import Footer from '../components/footer';
 
 function Collections(){
     return(
-        <header>
-            <NavBar/>
-            <h1>Collections</h1>
-        </header>
+        <body>
+            <header>
+                <NavBar/>
+                <h1>Collections</h1>
+            </header>
+
+            <Footer />
+        </body>
     );
 }
 
