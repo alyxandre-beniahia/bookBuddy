@@ -1,9 +1,8 @@
-import NavBar from '../components/navbar';
+import NavbarFooter from '../components/navbarFooter';
 
 function Footer(){
     return(
         <footer>
-            
             <div className="space">
                 <div className="phrase2">
                     <h1>Explore Our Gallery : See<br></br> Our Sunscreen In Action</h1>
@@ -17,7 +16,7 @@ function Footer(){
                 </div>
             </div>
             <div className="liens">
-                <NavBar />
+                <NavbarFooter />
             </div>
         </footer>
     );

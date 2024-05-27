@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap');
+
+header .navBar a{
+    padding: 0;
+}
+
+.navBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Red Rose', sans-serif;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #7A7A7A;
+    border-radius: 1rem;
+}
+
+.navBar .divLeft h1{ 
+    text-transform: uppercase;
+}
+
+.navBar .divLeft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Red Rose', sans-serif;
+    width: 15%;
+}
+
+.navBar .divCenter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Red Rose', sans-serif;
+    width: 70%;
+    padding: 0 3rem 0 3rem;
+}
+
+.navBar .divRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Red Rose', sans-serif;
+    width: 15%;
+}
+
+.navBar a{
+    padding: 0;
+}
+
+.logo{
+    height: 2rem;
+    width: 2rem;
+    background-image: url(../assets/user.png);
+    background-position: center;
+    background-size: cover;
+}
+
+

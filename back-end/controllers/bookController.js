@@ -2,6 +2,24 @@ const Book = require("../models/book");
 const User = require("../models/user");
 
 // Ajouter un livre
+
+// export const bookController = {
+//   addBookTest: async () => {
+//     const { title, author, status, pages, category, image } = req.body;
+
+//   try {
+//     const newBook = new Book({ title, author, status, pages, category, image });
+
+//     const book = await newBook.save();
+
+//     res.json(book);
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).send("Erreur serveur");
+//   }
+//   }
+// }
+
 exports.addBook = async (req, res) => {
   const { title, author, status, pages, category, image } = req.body;
 

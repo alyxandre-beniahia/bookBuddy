@@ -36,14 +36,14 @@ input::placeholder {
     padding-right: 50px;
 }
 
-.liens nav {
+.liens .navBarFooter{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
 }
 
-nav a {
+.navBarFooter a {
     text-decoration: none;
     color: black;
     padding-left: 30px;
