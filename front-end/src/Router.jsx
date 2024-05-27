@@ -3,6 +3,7 @@ import Home from './pages/home';
 import Collections from './pages/collections';
 import Favorites from './pages/favorites';
 import Account from './pages/account';
+import './scss/main.scss'
 
 const router = createBrowserRouter([
   {

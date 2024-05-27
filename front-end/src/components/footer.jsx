@@ -3,6 +3,7 @@ import NavBar from '../components/navbar';
 function Footer(){
     return(
         <footer>
+            
             <div className="space">
                 <div className="phrase2">
                     <h1>Explore Our Gallery : See<br></br> Our Sunscreen In Action</h1>
