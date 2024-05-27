@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap');
 
-header .navBar a{
-    padding: 0;
-}
-
 .navBar{
     display: flex;
     justify-content: center;
@@ -34,6 +30,12 @@ header .navBar a{
     font-family: 'Red Rose', sans-serif;
     width: 70%;
     padding: 0 3rem 0 3rem;
+}
+
+.navBar .divCenter a{
+    text-decoration: none;
+    border: none;
+    color: inherit;
 }
 
 .navBar .divRight{
