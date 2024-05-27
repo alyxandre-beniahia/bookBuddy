@@ -3,49 +3,72 @@
 footer {
     background-color: #DCD6CF;
     font-family: 'Red Rose', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+.liens,.container {
+    flex: 1;
 }
 
 .bouton {
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: black;
-    color: white;
+    color: #DCD6CF;
     font-family: 'Red Rose', sans-serif;
+    height: 30px;
 }
 
 #email {
-    border-radius: 8px;
+    border-radius: 12.5px;
     background-color: transparent;
+    background-image: url('C:/Users/InsaN/OneDrive/Documents/bookBuddy/front-end/src/assets/fleche.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 40px;
+    padding-right: 40px;
     font-family: 'Red Rose', sans-serif;
+    font-size: 15px;
+    height: 40px;
     width: 300px;
-    height: 30px;
 }
 
 input::placeholder {
     color: black;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
 .phrase {
     display: flex;
     justify-content: flex-end;
-    padding-right: 80px;
+    padding-right: 40px;
+    margin-left: 20px;
 }
 
-.phrase2 {
+.explore {
     display: flex;
     justify-content: flex-end;
     padding-right: 50px;
+    font-size: x-large;
 }
 
 .liens nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-end;
+    gap: 3rem;
 
 }
 
 nav a {
     text-decoration: none;
     color: black;
-    padding-left: 30px;
-    padding-bottom: 50px;
 }
+

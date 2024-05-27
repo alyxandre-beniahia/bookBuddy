@@ -1,6 +1,6 @@
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
-import '../scss/main.scss'
+import '../scss/main.scss';
 
 function Home(){
     return(

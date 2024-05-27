@@ -1,11 +1,14 @@
 import NavBar from '../components/navbar';
+import "../scss/base/reset.scss";
 
 function Footer(){
     return(
         <footer>
-            
-            <div className="space">
-                <div className="phrase2">
+            <div className="liens">
+                <NavBar />
+            </div>
+            <div className="container">
+                <div className="explore">
                     <h1>Explore Our Gallery : See<br></br> Our Sunscreen In Action</h1>
                 </div>
                 <div className="phrase">
@@ -14,10 +17,7 @@ function Footer(){
                 </div>
                 <div className="phrase">
                     <button className="bouton">Back to the Top</button>
-                </div>
             </div>
-            <div className="liens">
-                <NavBar />
             </div>
         </footer>
     );
