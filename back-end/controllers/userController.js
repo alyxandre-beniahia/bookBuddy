@@ -98,7 +98,6 @@ exports.deleteUser = async (req, res) => {
       return res.status(404).json({ msg: "Utilisateur non trouvé" });
     }
 
-    // Assurez-vous que seul l'utilisateur lui-même ou un administrateur peut supprimer un compte
     if (user.id !== req.user.id) {
       return res.status(401).json({ msg: "Autorisation refusée" });
     }
@@ -111,3 +110,23 @@ exports.deleteUser = async (req, res) => {
     res.status(500).send("Erreur serveur");
   }
 };
+
+// controllers/userController.js
+const User = require('../models/user');
+const { faker } = require('@faker-js/faker');
+
+exports.createFakeUser = async (req, res) => {
+  try {
+    const username = faker.internet.userName();
+    const password = faker.internet.password();
+    const email = faker.internet.email();
+
+    const newUser = new User({ username, password, email });
+    await newUser.save();
+
+    res.status(201).json({ message: 'Fake user created successfully', user: newUser });
+  } catch (error) {
+    res.status(400).json({ message: 'Error creating fake user', error });
+  }
+};
+
