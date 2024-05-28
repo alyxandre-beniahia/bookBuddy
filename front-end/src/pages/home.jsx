@@ -109,7 +109,7 @@ const fetchApiBook = async (bookData, token) => {
 
         <div className='uploadImgWrapper'>
             <div className='imgUpload'></div>
-            <button className='buttonAddImg'>Add Image</button>
+            <input type="file"/>
         </div>
 
         </div>
