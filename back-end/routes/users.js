@@ -13,12 +13,12 @@ router.post("/login", userController.loginUser);
 
 // @route  GET api/users/:id
 // @desc   Get user by ID
-router.get("/:id", auth, userController.getUser);
+router.get("/me", auth, userController.getUser);
 
 // @route  PUT api/users/:id
 // @desc   Update user password
-router.put("/:id", auth, userController.updatePassword);
+router.put("/me", auth, userController.updatePassword);
 
-router.delete("/:id", auth, userController.deleteUser);
+router.delete("/me", auth, userController.deleteUser);
 
 module.exports = router;

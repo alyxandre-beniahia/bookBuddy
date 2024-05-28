@@ -25,7 +25,7 @@ const LoginPage = () => {
       if (token) {
         alert('Login successful');
         localStorage.setItem('token', token);
-        navigate('/profile');
+        navigate('/profilePage');
       } else {
         alert('Login failed');
       }

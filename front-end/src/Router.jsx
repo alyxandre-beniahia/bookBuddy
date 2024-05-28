@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home';
 import Collections from './pages/collections';
 import Favorites from './pages/favorites';
-import Account from './pages/account';
+import ProfilePage from './pages/ProfilePage';
 import Register from './pages/RegisterPage';
 import Login from './pages/LoginPage';
 import './scss/main.scss'
@@ -29,8 +29,8 @@ const router = createBrowserRouter([
     element: <Favorites/>
   },
   {
-    path: '/account',
-    element: <Account/>
+    path: '/profilePage',
+    element: <ProfilePage/>
   },
 ]);
 
