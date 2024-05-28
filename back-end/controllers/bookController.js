@@ -91,8 +91,9 @@ exports.updateLastReadPage = async (req, res) => {
   }
 };
 
-// Ajouter un livre aux favoris
+// Ajouter un livre aux favoris PROBLEME ICI !!!!!!
 exports.addToFavorites = async (req, res) => {
+  console.log(req.user);
   try {
     let user = await User.findById(req.user.id);
 

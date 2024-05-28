@@ -9,7 +9,12 @@ exports.registerUser = async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (user) {
-      return res.status(400).json({ msg: "Utilisateur déjà enregistré" });
+      return res.status(400).json({ msg: "Email déjà utilisé" });
+    }
+
+    user = await User.findOne({ name });
+    if (user) {
+      return res.status(400).json({ msg: "Nom déjà utilisé" });
     }
 
     user = new User({ name, email, password });
@@ -40,12 +45,12 @@ exports.loginUser = async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ msg: "Identifiants invalides" });
+      return res.status(400).json({ msg: "Email inconnu" });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ msg: "Identifiants invalides" });
+      return res.status(400).json({ msg: "Mot de passe incorrect" });
     }
 
     const payload = {
@@ -92,7 +97,7 @@ exports.updatePassword = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
+    const user = await User.findById(req.user.id);
 
     if (!user) {
       return res.status(404).json({ msg: "Utilisateur non trouvé" });
