@@ -36,16 +36,17 @@ input::placeholder {
     padding-right: 50px;
 }
 
-.liens .navBarFooter{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.liens {
+    .navBarFooter {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
-}
-
-.navBarFooter a {
-    text-decoration: none;
-    color: black;
-    padding-left: 30px;
-    padding-bottom: 50px;
+        a {
+            text-decoration: none;
+            color: black;
+            padding-left: 30px;
+            padding-bottom: 50px;
+        }
+    }
 }
