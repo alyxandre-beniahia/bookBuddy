@@ -21,14 +21,14 @@ router.put("/book/:id", bookController.updateBookStatus);
 
 // @route  PUT api/books/status/:id
 // @desc   Update last read page
-router.put("/book/lrp/:id", bookController.updateLastReadPage);
+router.put("/book/lrp/:id", auth, bookController.updateLastReadPage);
 
 // @route  POST api/books/favorite/:id
 // @desc   Add book to favorites
-router.post("/book/favorite/:id", bookController.addToFavorites);
+router.post("/book/favorite/:id", auth, bookController.addToFavorites);
 
 // @route  DELETE api/books/favorite/:id
 // @desc   Remove book from favorites
-router.delete("/book/favorite/:id", bookController.removeFromFavorites);
+router.delete("/book/favorite/:id", auth, bookController.removeFromFavorites);
 
 module.exports = router;

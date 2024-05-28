@@ -17,7 +17,7 @@ router.get("/me", auth, userController.getUser);
 
 // @route  PUT api/users/:id
 // @desc   Update user password
-router.put("/me", auth, userController.updatePassword);
+router.put("/me", auth, userController.updateUser);
 
 router.delete("/me", auth, userController.deleteUser);
 

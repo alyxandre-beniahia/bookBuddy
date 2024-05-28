@@ -23,14 +23,12 @@ const LoginPage = () => {
       const {token} = res.data;
   
       if (token) {
-        alert('Login successful');
+        alert('Vous êtes connecté !');
         localStorage.setItem('token', token);
         navigate('/profilePage');
-      } else {
-        alert('Login failed');
       }
     } catch (error) {
-      alert('Login failed');
+      alert(error.response.data.msg);
     }
   };
 

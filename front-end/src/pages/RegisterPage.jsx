@@ -48,7 +48,7 @@ const RegisterPage = () => {
         console.error('Registration failed');
       }
     } catch (error) {
-      console.error('Error during registration:', error.response.data);
+      alert( error.response.data.msg);
     }
   };
 
@@ -68,6 +68,7 @@ const RegisterPage = () => {
             value={name}
             onChange={handleChange}
             placeholder="Enter your name"
+            required
           />
         </div>
         <div className="mb-3">
@@ -82,6 +83,7 @@ const RegisterPage = () => {
             value={email}
             onChange={handleChange}
             placeholder="Enter your email"
+            required
           />
         </div>
         <div className="mb-3">
@@ -96,6 +98,7 @@ const RegisterPage = () => {
             value={password}
             onChange={handleChange}
             placeholder="Enter your password"
+            required
           />
         </div>
         <div className="mb-3">
@@ -110,6 +113,7 @@ const RegisterPage = () => {
             value={confirmPassword}
             onChange={handleChange}
             placeholder="Confirm your password"
+            required
           />
           {passwordMatchError && <div className="text-danger">{passwordMatchError}</div>}
         </div>

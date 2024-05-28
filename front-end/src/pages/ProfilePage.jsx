@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import withAuth from '../components/withAuth';
 import { useNavigate } from'react-router-dom';
-import book from '../../../back-end/models/book';
 
 const ProfilePage = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     password: '',
     newPassword: '',
@@ -16,19 +15,20 @@ const ProfilePage = () => {
 
   const navigate = useNavigate()
 
-  const { username, email, password, newPassword, id } = formData;
+  const { name, email, password, newPassword, id } = formData;
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
   
-        const res = await axios.get('http://localhost:5000/api/me', {
+        const res = await axios.get('http://localhost:5000/api/users/me', {
           headers: {
             'x-auth-token': token
           }
         });
-        setFormData({ ...formData, username: res.data.username, email: res.data.email, favoriteBooks: res.data.favoriteBooks, id: res.data._id });
+        setFormData({ ...formData, name: res.data.name, email: res.data.email, favoriteBooks: res.data.favoriteBooks, id: res.data._id });
+        console.log(res)
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -47,7 +47,7 @@ const ProfilePage = () => {
     try {
       const token = localStorage.getItem('token');
 
-      const res = await axios.put('http://localhost:5000/api/users/', formData, {
+      const res = await axios.put('http://localhost:5000/api/users/me', formData, {
         headers: {
           'x-auth-token': token
         }
@@ -55,7 +55,7 @@ const ProfilePage = () => {
 
       alert('Profile updated successfully:');
     } catch (error) {
-      alert('Error updating profile, wrong password:', error);
+      alert(error.response.data.msg);
     }
   };
 
@@ -63,17 +63,17 @@ const ProfilePage = () => {
     try {
       const token = localStorage.getItem('token');
   
-      await axios.delete('http://localhost:5000/api/me', {
+      await axios.delete('http://localhost:5000/api/users/me', {
         headers: {
           'x-auth-token': token,
         },
       });
 
-      alert('Profile deleted successfully');
+      alert('Profil supprimé !');
       localStorage.removeItem('token');
       navigate('/login');
     } catch (error) {
-      console.error('Error deleting profile:', error);
+      console.error(error.response.data.msg);
     }
   };
   
@@ -83,17 +83,17 @@ const ProfilePage = () => {
       <h1 className="mb-4">Profile</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="username" className="form-label">
+          <label htmlFor="name" className="form-label">
             Username
           </label>
           <input
             type="text"
             className="form-control"
-            id="username"
-            name="username"
-            value={username}
+            id="name"
+            name="name"
+            value={name}
             onChange={handleChange}
-            placeholder="Enter your username"
+            placeholder="Enter your name"
           />
         </div>
         <div className="mb-3">

@@ -21,6 +21,7 @@ exports.registerUser = async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(password, salt);
+    console.log(user);
 
     await user.save();
 
@@ -45,12 +46,12 @@ exports.loginUser = async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ msg: "Email inconnu" });
+      return res.status(400).json({ msg: "Identifiant incorrect" });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ msg: "Mot de passe incorrect" });
+      return res.status(400).json({ msg: "Identifiant incorrect" });
     }
 
     const payload = {
@@ -70,7 +71,7 @@ exports.loginUser = async (req, res) => {
 // Récupérer les informations utilisateur
 exports.getUser = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
+    const user = await User.findById(req.user.id);
     res.json(user);
   } catch (err) {
     console.error(err.message);
@@ -79,16 +80,27 @@ exports.getUser = async (req, res) => {
 };
 
 // Mettre à jour le mot de passe utilisateur
-exports.updatePassword = async (req, res) => {
-  const { password } = req.body;
-
+exports.updateUser = async (req, res) => {
   try {
+    const { name, email, password, newPassword, favoriteBooks, id } = req.body;
+    const user = await User.findById(req.user.id);
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ msg: "Mot de passe incorrect" });
+    }
+
+    user.name = name;
+    user.email = email;
+    user.favoriteBooks = favoriteBooks;
+
     const salt = await bcrypt.genSalt(10);
-    const newPassword = await bcrypt.hash(password, salt);
+    const hashedpassword = await bcrypt.hash(newPassword, salt);
+    user.password = hashedpassword;
 
-    await User.findByIdAndUpdate(req.user.id, { password: newPassword });
+    await user.save();
 
-    res.json({ msg: "Mot de passe mis à jour" });
+    res.json({ msg: "Profil mis à jour" });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Erreur serveur");
@@ -97,18 +109,7 @@ exports.updatePassword = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id);
-
-    if (!user) {
-      return res.status(404).json({ msg: "Utilisateur non trouvé" });
-    }
-
-    // Assurez-vous que seul l'utilisateur lui-même ou un administrateur peut supprimer un compte
-    if (user.id !== req.user.id) {
-      return res.status(401).json({ msg: "Autorisation refusée" });
-    }
-
-    await user.remove();
+    await User.findByIdAndDelete(req.user.id);
 
     res.json({ msg: "Utilisateur supprimé avec succès" });
   } catch (err) {
