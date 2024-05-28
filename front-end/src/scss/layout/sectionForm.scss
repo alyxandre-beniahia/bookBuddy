@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap');
+
+.headerForm{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 2rem 2rem 2rem;
+    font-family: 'Red Rose', sans-serif;
+
+    .divHeadLeft{
+        width: 30%;
+    }
+
+    .divHeadCenter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+
+        h2{
+            text-align: start;
+            font-size: 2rem;
+            width: 70%;
+        }
+    }
+
+    .divHeadRight{
+        width: 30%;
+    }
+}
+
+.formHome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 293px;
+
+      .inputTextWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        div{
+            width: 10rem;
+            margin: 1rem 0 1rem 0;
+        }
+      }  
+
+      .uploadImgWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+
+        .imgUpload{
+            height: 15rem;
+            width: 15rem;
+            background-image: url(http://localhost:5173/assets/icons-img-500.png);
+            background-size: cover;
+        }
+      }
+}
+
