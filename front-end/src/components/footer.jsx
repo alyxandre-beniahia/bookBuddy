@@ -1,14 +1,10 @@
-import NavBar from '../components/navbar';
-import "../scss/base/reset.scss";
+import NavbarFooter from '../components/navbarFooter';
 
 function Footer(){
     return(
         <footer>
-            <div className="liens">
-                <NavBar />
-            </div>
-            <div className="container">
-                <div className="explore">
+            <div className="space">
+                <div className="phrase2">
                     <h1>Explore Our Gallery : See<br></br> Our Sunscreen In Action</h1>
                 </div>
                 <div className="phrase">
@@ -18,6 +14,9 @@ function Footer(){
                 <div className="phrase">
                     <button className="bouton">Back to the Top</button>
             </div>
+            </div>
+            <div className="liens">
+                <NavbarFooter />
             </div>
         </footer>
     );
