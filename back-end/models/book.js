@@ -11,7 +11,7 @@ const BookSchema = new mongoose.Schema({
   pages: { type: Number, required: true },
   category: { type: String, required: true },
   lastReadPage: { type: Number, default: 0 },
-  image: { type: String, required: true },
+  image: { type: String },
 });
 
 module.exports = mongoose.model("Book", BookSchema);

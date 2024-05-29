@@ -1,7 +1,6 @@
 const express = require("express");
-const router = express.Router();
 const userController = require("../controllers/userController");
-const auth = require("../back-end/middleware/auth");
+const auth = require("../middleware/auth");
 
 // @route  POST api/users
 // @desc   Register user
@@ -20,5 +19,15 @@ router.get("/:id", auth, userController.getUser);
 router.put("/:id", auth, userController.updatePassword);
 
 router.delete("/:id", auth, userController.deleteUser);
+
+// @route  POST /user
+// @route   POST /fake-user
+router.post('/users', userController.createUser);
+router.post('/fake-user', userController.createFakeUser);
+router.post('/fake-users', userController.createMultipleFakeUsers);
+
+const express = require('express');
+const router = express.Router();
+const userController = require('../controllers/userController');
 
 module.exports = router;
