@@ -1,0 +1,16 @@
+main {
+    background-color: #121212;
+}
+
+.title {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Red Rose', sans-serif;
+    color: white;
+    margin-bottom: 30px;
+}
+.container__card{
+    display: flex;
+    justify-content: space-around;
+}
