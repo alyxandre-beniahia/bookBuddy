@@ -84,7 +84,7 @@ const ProfilePage = () => {
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
-            Username
+            Name
           </label>
           <input
             type="text"
