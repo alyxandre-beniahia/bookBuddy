@@ -1,10 +1,12 @@
 import React from 'react';
 import Card from '../components/card.jsx'
+import { useState } from 'react';
 
 function Collections(){
+    const [books, setBooks] = useState('');
     //ICI fonction pour fetch les livres
     async function getBooks() {
-        const data = await fetch ('http://localhost:5000/api/books');
+        const data = await fetch ('http://localhost:3000/api/books/books');
         const books = data.json();
         console.log(books);
     }
