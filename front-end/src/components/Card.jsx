@@ -1,10 +1,10 @@
 import React from "react";
 
 
-function Card ({book, key}){
+function Card ({book}){
     const {title, author, pages, category} = book;
     return (
-        <div className="card" key={key}>
+        <div className="card">
             <div className="card-body">
                 <h5 className="card-title">Titre: {title}</h5>
                 <p className="card-text">Auteur: {author}</p>

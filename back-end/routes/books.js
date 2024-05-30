@@ -11,13 +11,17 @@ router.post("/addBook", auth, bookController.addBook);
 // @desc   Get all books
 router.get("/books", bookController.getBooks);
 
+// @route  GET api/books/search
+// @desc   Search for books by name, author, or category
+router.get("/search", bookController.searchBooks);
+
 // @route  GET api/books/:id
 // @desc   Get book by ID
 router.get("/book/:id", bookController.getBookById);
 
 // @route  PUT api/books/:id
 // @desc   Update book status
-router.put("/book/:id", bookController.updateBookStatus);
+router.put("/book/:id", auth, bookController.updateBookStatus);
 
 // @route  PUT api/books/status/:id
 // @desc   Update last read page
@@ -25,10 +29,10 @@ router.put("/book/lrp/:id", auth, bookController.updateLastReadPage);
 
 // @route  POST api/books/favorite/:id
 // @desc   Add book to favorites
-router.post("/book/favorite/:id", bookController.addToFavorites);
+router.post("/book/favorite/:id", auth, bookController.addToFavorites);
 
 // @route  DELETE api/books/favorite/:id
 // @desc   Remove book from favorites
-router.delete("/book/favorite/:id", bookController.removeFromFavorites);
+router.delete("/book/favorite/:id", auth, bookController.removeFromFavorites);
 
 module.exports = router;

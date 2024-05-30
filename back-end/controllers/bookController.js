@@ -29,6 +29,23 @@ exports.getBooks = async (req, res) => {
   }
 };
 
+// Rechercher des livres
+exports.searchBooks = async (req, res) => {
+  try {
+    const { query } = req.query;
+    const regex = new RegExp(query, "i"); // Case-insensitive search
+
+    const books = await Book.find({
+      $or: [{ name: regex }, { author: regex }, { category: regex }],
+    });
+
+    res.json(books);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+};
+
 // Récupérer un livre spécifique
 exports.getBookById = async (req, res) => {
   try {
@@ -101,7 +118,6 @@ exports.addToFavorites = async (req, res) => {
     if (!user) {
       return res.status(404).json({ msg: "Utilisateur non trouvé" });
     }
-
     user.favoriteBooks.push(req.params.id);
 
     await user.save();
