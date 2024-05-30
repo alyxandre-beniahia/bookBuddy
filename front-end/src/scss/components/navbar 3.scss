@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap');
+
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Red Rose', sans-serif;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #7A7A7A;
+    border-radius: 1rem;
+
+    .divLeft, .divCenter, .divRight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Red Rose', sans-serif;
+    }
+
+    .divLeft {
+        width: 15%;
+
+        h1 {
+            text-transform: uppercase;
+        }
+    }
+
+    .divCenter {
+        justify-content: space-around;
+        width: 70%;
+        padding: 0 3rem;
+
+        a {
+            text-decoration: none;
+            border: none;
+            color: inherit;
+        }
+    }
+
+    .divRight {
+        width: 15%;
+    }
+
+    a {
+        padding: 0;
+    }
+
+    .logo {
+        height: 2rem;
+        width: 2rem;
+        background-image: url(../assets/user.png);
+        background-position: center;
+        background-size: cover;
+    }
+}
