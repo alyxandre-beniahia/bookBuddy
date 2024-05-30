@@ -5,6 +5,9 @@ import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import Favorites from './pages/favorites';
 import Account from './pages/account';
+import Login from './pages/LoginPage';
+import Register from './pages/RegisterPage';
+// import Profil from './pages/ProfilePage';
 import { RouteLayout } from './route';
 import Home from './pages/home';
 
@@ -29,6 +32,8 @@ const router = createBrowserRouter([
       {path: '/collections',element: <Collections/>},
       {path: '/favorites',element: <Favorites/>},
       {path: '/account',element: <Account/>},
+      {path: '/login', element: <Login/>},
+      {path: '/register', element: <Register/>},
     ]
   },
 ]);

@@ -5,6 +5,7 @@ const User = require("../models/user");
 // Inscription utilisateur
 exports.registerUser = async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(name)
 
   try {
     let user = await User.findOne({ email });
