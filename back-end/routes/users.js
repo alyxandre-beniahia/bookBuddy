@@ -1,4 +1,5 @@
 const express = require("express");
+const router = express.Router();
 const userController = require("../controllers/userController");
 const auth = require("../middleware/auth");
 
@@ -20,14 +21,5 @@ router.put("/me", auth, userController.updateUser);
 
 router.delete("/me", auth, userController.deleteUser);
 
-// @route  POST /user
-// @route   POST /fake-user
-router.post('/users', userController.createUser);
-router.post('/fake-user', userController.createFakeUser);
-router.post('/fake-users', userController.createMultipleFakeUsers);
-
-const express = require('express');
-const router = express.Router();
-const userController = require('../controllers/userController');
 
 module.exports = router;
