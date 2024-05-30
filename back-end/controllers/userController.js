@@ -9,19 +9,20 @@ exports.registerUser = async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (user) {
-      return res.status(400).json({ msg: "Email déjà utilisé" });
+      return res.status(400).json("Email déjà utilisé");
     }
 
     user = await User.findOne({ name });
     if (user) {
-      return res.status(400).json({ msg: "Nom déjà utilisé" });
+      return res.status(400).json("Nom déjà utilisé");
     }
-
+    if (password.length <= 5) {
+      return res.status(400).json("Mot de passe trop court");
+    }
     user = new User({ name, email, password });
 
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(password, salt);
-    console.log(user);
 
     await user.save();
 
@@ -34,8 +35,7 @@ exports.registerUser = async (req, res) => {
       res.json({ token });
     });
   } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Erreur serveur");
+    res.status(500).send(err.message);
   }
 };
 

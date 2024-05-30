@@ -48,7 +48,8 @@ const RegisterPage = () => {
         console.error('Registration failed');
       }
     } catch (error) {
-      alert( error.response.data.msg);
+      console.log(error);
+      alert( error.response.data);
     }
   };
 
