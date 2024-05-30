@@ -5,23 +5,25 @@ const User = require("../models/user");
 // Inscription utilisateur
 exports.registerUser = async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(name)
 
   try {
     let user = await User.findOne({ email });
     if (user) {
-      return res.status(400).json({ msg: "Email déjà utilisé" });
+      return res.status(400).json("Email déjà utilisé");
     }
 
     user = await User.findOne({ name });
     if (user) {
-      return res.status(400).json({ msg: "Nom déjà utilisé" });
+      return res.status(400).json("Nom déjà utilisé");
     }
-
+    if (password.length <= 5) {
+      return res.status(400).json("Mot de passe trop court");
+    }
     user = new User({ name, email, password });
 
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(password, salt);
-    console.log(user);
 
     await user.save();
 
@@ -34,8 +36,7 @@ exports.registerUser = async (req, res) => {
       res.json({ token });
     });
   } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Erreur serveur");
+    res.status(500).send(err.message);
   }
 };
 
@@ -107,6 +108,8 @@ exports.updateUser = async (req, res) => {
   }
 };
 
+// Supprimer un utilisateur
+
 exports.deleteUser = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.user.id);
@@ -117,23 +120,3 @@ exports.deleteUser = async (req, res) => {
     res.status(500).send("Erreur serveur");
   }
 };
-
-// controllers/userController.js
-const User = require('../models/user');
-const { faker } = require('@faker-js/faker');
-
-exports.createFakeUser = async (req, res) => {
-  try {
-    const username = faker.internet.userName();
-    const password = faker.internet.password();
-    const email = faker.internet.email();
-
-    const newUser = new User({ username, password, email });
-    await newUser.save();
-
-    res.status(201).json({ message: 'Fake user created successfully', user: newUser });
-  } catch (error) {
-    res.status(400).json({ message: 'Error creating fake user', error });
-  }
-};
-
