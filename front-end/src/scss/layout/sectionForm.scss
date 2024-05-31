@@ -60,6 +60,15 @@
             input::placeholder{
                 color: white;
             }
+            input:valid{
+                color: white;
+            }
+            input:focus{
+                outline: none;
+                border-color: transparent;
+                background-color: rgb(61, 61, 61);
+                border-radius: 1rem;
+            }
         }
       }
 

@@ -31,5 +31,6 @@ function Card({ book }) {
       status: PropTypes.string
     }).isRequired
   };
+  
 
 export default Card;
