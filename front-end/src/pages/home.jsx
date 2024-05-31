@@ -1,6 +1,6 @@
 import '../scss/main.scss'
-import React, { useState } from 'react';
-// import Card from '../components/card.jsx'
+import React, { useState, useEffect, useCallback} from 'react';
+import Card from '../components/Card'
 
 const Home = () => {
   const [title, setTitle] = useState('');
@@ -8,51 +8,46 @@ const Home = () => {
   const [pages, setPages] = useState('');
   const [category, setCategory] = useState('');
   const [img, setImg] = useState('');
-
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
+  const [books, setBooks] = useState([]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const bookData = {
-      title,
-      author,
-      pages,
-      category,
-      img
+      titre: title,
+      auteur: author,
+      pages: parseInt(pages, 10),
+      categorie: category,
+      image: img,
+      lastReadPage: 0,
+      status: "à lire"
     };
     console.log(bookData);
+  };
 
-const token = localStorage.getItem('token');
-  if (!token) {
-    console.error('No token found');
-    return;
-  }
+// const token = localStorage.getItem('token');
+//   if (!token) {
+//     console.error('No token found');
+//     return;
+//   }
+// };
 
-  fetchApiBook(bookData, token);
-};
+let api = 'http://localhost:3000/api/books/books'
 
-const fetchApiBook = async (bookData, token) => {
+const fetchApiBook = useCallback(async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/books/addBook', {
-      method: 'POST',
-      headers: {
-        'Authorization': token,
-      },
-      body: JSON.stringify(bookData),
-    });
-
-    if (!response.ok) {
-      throw new Error('Erreur lors de l\'ajout du livre');
-    }
-
-    const result = await response.json();
-    console.log('Livre ajouté avec succès:', result);
+    const response = await fetch(api);
+    const data = await response.json();
+    console.log(data);
+    setBooks(data);
   } catch (error) {
-    console.error('Erreur:', error);
+    console.error('Une erreur s\'est produite', error);
   }
-};
+}, [api]);
+
+useEffect(() => {
+  fetchApiBook();
+}, []);
+
     return (
         <>
         <section>
@@ -145,10 +140,9 @@ const fetchApiBook = async (bookData, token) => {
           </div>
 
           <div className='wrapperCard'>
-            {/* <Card/>
-            <Card/>
-            <Card/>
-            <Card/> */}
+          {books.map((book) => (
+            <Card key={book._id} book={book} />
+          ))}
           </div>
 
           <div className='exploreOurGallery'>
