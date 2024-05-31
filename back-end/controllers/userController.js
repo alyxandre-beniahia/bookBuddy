@@ -122,7 +122,6 @@ exports.deleteUser = async (req, res) => {
 };
 
 // controllers/userController.js
-const User = require('../models/user');
 const { faker } = require('@faker-js/faker');
 
 exports.createFakeUser = async (req, res) => {
