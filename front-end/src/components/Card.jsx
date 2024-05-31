@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Card ({book}){
     const {title, author, pages, category} = book;
     return (
