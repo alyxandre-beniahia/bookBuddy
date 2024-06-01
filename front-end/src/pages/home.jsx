@@ -2,63 +2,116 @@ import '../scss/main.scss';
 import React, { useState, useEffect, useCallback } from 'react';
 import Card from '../components/Card';
 
-const Home = () => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [pages, setPages] = useState('');
-  const [category, setCategory] = useState('');
-  const [img, setImg] = useState(null);
-  const [books, setBooks] = useState([]);
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    console.log('Titre:', title);
-    console.log('Auteur:', author);
-    console.log('Pages:', pages);
-    console.log('Catégorie:', category);
-    console.log('Image:', img);
-
-    const token = localStorage.getItem('token');
-    if (!token) {
-      alert('Veuillez vous connecter pour ajouter un livre.');
-      return;
-    }
-
-    console.log('Token:', token);
-
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('author', author);
-    formData.append('pages', parseInt(pages, 10));
-    formData.append('category', category);
-    formData.append('image', img);
-    formData.append('lastReadPage', 0);
-    formData.append('status', 'à lire');
-
-    try {
-      const response = await fetch('http://localhost:3000/api/books/addBook', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        },
-        body: formData
-      });
-
-      if (response.ok) {
-        const newBook = await response.json();
-        setBooks([...books, newBook]);
-        console.log('Book added successfully:', newBook);
-      } else {
-        const errorText = await response.text();
-        console.error('Erreur lors de l\'ajout du livre', response.status, errorText);
-        alert('Erreur lors de l\'ajout du livre: ' + errorText);
+  const AddBookForm = () => {
+    const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState('');
+    const [status, setStatus] = useState('à lire');
+    const [pages, setPages] = useState(0);
+    const [category, setCategory] = useState('');
+    const [lastReadPage, setLastReadPage] = useState(0);
+    const [image, setImg] = useState('');
+    const [books, setBooks] = useState([]);
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      const bookData = {
+        title,
+        author,
+        status,
+        pages,
+        category,
+        lastReadPage,
+        image,
+      };
+  
+      const token = localStorage.getItem('token');
+  
+      if (!token) {
+        console.error('No token found. Please log in.');
+        return;
       }
-    } catch (error) {
-      console.error('Une erreur s\'est produite', error);
-      alert('Une erreur s\'est produite: ' + error.message);
-    }
-  };
+
+      console.log(token);
+  
+      try {
+        const response = await fetch('http://localhost:3000/api/books/addBook', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
+          body: JSON.stringify(bookData),
+        });
+  
+        if (response.ok) {
+          const result = await response.json();
+          console.log('Book added successfully:', result);
+        } else {
+          console.error('Failed to add book:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+  // const [title, setTitle] = useState('');
+  // const [author, setAuthor] = useState('');
+  // const [pages, setPages] = useState('');
+  // const [category, setCategory] = useState('');
+  // const [status, setStatus] = useState('à lire');
+  // const [img, setImg] = useState(null);
+  // const [books, setBooks] = useState([]);
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   console.log('Titre:', title);
+  //   console.log('Auteur:', author);
+  //   console.log('Pages:', pages);
+  //   console.log('Catégorie:', category);
+  //   console.log('Image:', img);
+
+  //   const token = localStorage.getItem('token');
+  //   if (!token) {
+  //     alert('Veuillez vous connecter pour ajouter un livre.');
+  //     return;
+  //   }
+
+  //   console.log('Token:', token);
+
+  //   const formData = new FormData();
+  //   formData.append('title', title);
+  //   formData.append('author', author);
+  //   formData.append('pages', parseInt(pages, 10));
+  //   formData.append('category', category);
+  //   formData.append('image', img);
+  //   formData.append('lastReadPage', 0);
+  //   formData.append('status', 'à lire');
+
+  //   try {
+  //     const response = await fetch('http://localhost:3000/api/books/addBook', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Authorization': {token}
+  //       },
+  //       body: formData
+  //     });
+
+  //     if (response.ok) {
+  //       const newBook = await response.json();
+  //       setBooks([...books, newBook]);
+  //       console.log('Book added successfully:', newBook);
+  //     } else {
+  //       const errorText = await response.text();
+  //       console.error('Erreur lors de l\'ajout du livre', response.status, errorText);
+  //       alert('Erreur lors de l\'ajout du livre: ' + errorText);
+  //     }
+  //   } catch (error) {
+  //     console.error('Une erreur s\'est produite', error);
+  //     alert('Une erreur s\'est produite: ' + error.message);
+  //   }
+  // };
 
   const fetchApiBook = useCallback(async () => {
     try {
@@ -132,6 +185,14 @@ const Home = () => {
                 required
               />
             </div>
+            <select value={status} onChange={(e) => setStatus(e.target.value)}>
+              <option value="à lire">À lire</option>
+              <option value="en cours de lecture">En cours de lecture</option>
+              <option value="lu">Lu</option>
+            </select>
+
+            <input type="number" value={lastReadPage} onChange={(e) => setLastReadPage(e.target.value)} placeholder="Last Read Page" />
+
             <button type="submit">Soumettre</button>
           </form>
 
@@ -180,4 +241,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default AddBookForm;
