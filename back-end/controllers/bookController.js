@@ -1,22 +1,50 @@
 const Book = require("../models/book");
 const User = require("../models/user");
+const multer = require("multer");
+const path = require("path");
+
+// Multer configuration
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, "../uploads/")); // Use the correct path for the 'uploads' directory
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage: storage });
 
 // Ajouter un livre
+exports.addBook = [
+  upload.single("image"), // Middleware to handle file upload
+  async (req, res) => {
+    const { title, author, status, pages, category } = req.body;
+    console.log(req.body);
 
-exports.addBook = async (req, res) => {
-  const { title, author, status, pages, category, image } = req.body;
+    if (!req.file) {
+      return res.status(400).json({ error: "No file uploaded" });
+    }
 
-  try {
-    const newBook = new Book({ title, author, status, pages, category, image });
+    const image = req.file.filename;
 
-    const book = await newBook.save();
-
-    res.json(book);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Erreur serveur");
-  }
-};
+    try {
+      const newBook = new Book({
+        title,
+        author,
+        status,
+        pages,
+        category,
+        image,
+      });
+      await newBook.save();
+      res.status(200).json(newBook);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Erreur serveur");
+    }
+  },
+];
 
 // Récupérer tous les livres
 exports.getBooks = async (req, res) => {
@@ -92,9 +120,8 @@ exports.updateLastReadPage = async (req, res) => {
   }
 };
 
-// Ajouter un livre aux favoris PROBLEME ICI !!!!!!
+// Ajouter un livre aux favoris
 exports.addToFavorites = async (req, res) => {
-  console.log(req.user);
   try {
     let user = await User.findById(req.user.id);
 

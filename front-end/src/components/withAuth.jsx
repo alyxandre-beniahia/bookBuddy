@@ -6,11 +6,9 @@ const withAuth = (WrappedComponent) => {
     const token = localStorage.getItem('token');
 
     if (!token) {
-      // If there is no token, redirect to the login page
       return <Navigate to="/login" replace />;
     }
 
-    // If there is a token, render the component
     return <WrappedComponent {...props} />;
   };
 

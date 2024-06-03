@@ -5,8 +5,9 @@ import likedImg from "../assets/liked-50.png";
 import jamesImg from "../assets/james-baldwin.png";
 
 function Card({ book }) {
-    const { _id, titre, auteur } = book;
+    const { _id, title, author, image } = book;
     const [isFavoris, setIsFavoris] = useState(false);
+
   
     const handleFavorisClick = async () => {
       try {
@@ -36,11 +37,11 @@ function Card({ book }) {
           onClick={handleFavorisClick}
           style={{ cursor: "pointer" }}
         />
-          <img src={jamesImg} alt={`Cover of ${titre}`} className="img-head"/>
+          <img src={`http://localhost:5000/uploads/${image}`} alt={`Cover of ${title}`} className="img-head"/>
         </div>
         <div className="card-body">
-          <h5 className="card-title">{titre}</h5>
-          <p className="card-text">{auteur}</p>
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">{author}</p>
         </div>
       </div>
     );
@@ -48,8 +49,8 @@ function Card({ book }) {
   
   Card.propTypes = {
     book: PropTypes.shape({
-      titre: PropTypes.string.isRequired,
-      auteur: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
     }).isRequired
   };
   

@@ -7,9 +7,8 @@ const Collections = () => {
 
   const fetchApiBook = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/books/books');
+      const response = await fetch('http://localhost:5000/api/books/books');
       const data = await response.json();
-      console.log(data);
       setBooks(data);
     } catch (error) {
       console.error('Une erreur s\'est produite', error);
@@ -32,6 +31,7 @@ const Collections = () => {
 
       <div className='wrapperCard'>
         {books.map((book) => (
+          console.log(book),
           <Card key={book._id} book={book} />
         ))}
       </div>

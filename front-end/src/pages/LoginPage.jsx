@@ -20,7 +20,7 @@ const LoginPage = () => {
   
     try {
       console.log(formData);
-      const res = await axios.post('http://localhost:3000/api/users/login', formData);
+      const res = await axios.post('http://localhost:5000/api/users/login', formData);
       const {token} = res.data;
   
       if (token) {
