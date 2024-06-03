@@ -1,4 +1,3 @@
-import "../scss/base/reset.scss";
 import React, { useState } from 'react';
 
     const Form = () => {

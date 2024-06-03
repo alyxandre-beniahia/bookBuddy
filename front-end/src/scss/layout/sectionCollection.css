@@ -10,6 +10,7 @@ section .headCollection {
   align-items: center;
   font-size: 2rem;
   margin-bottom: 2rem;
+  width: 100%;
 }
 section .wrapperCard {
   background-color: black;

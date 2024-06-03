@@ -1,4 +1,5 @@
 import NavbarFooter from '../components/navbarFooter';
+import '../scss/main.css'
 
 function Footer(){
     return(
