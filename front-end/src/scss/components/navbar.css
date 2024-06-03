@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap");
+.navBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Red Rose", sans-serif;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: #7A7A7A;
+  border-radius: 1rem;
+}
+.navBar .divLeft, .navBar .divCenter, .navBar .divRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Red Rose", sans-serif;
+}
+.navBar .divLeft {
+  width: 15%;
+}
+.navBar .divLeft h1 {
+  text-transform: uppercase;
+}
+.navBar .divCenter {
+  justify-content: space-around;
+  width: 70%;
+  padding: 0 3rem;
+}
+.navBar .divCenter a {
+  text-decoration: none;
+  border: none;
+  color: inherit;
+}
+.navBar .divRight {
+  width: 15%;
+}
+.navBar a {
+  padding: 0;
+}
+.navBar .logo {
+  height: 2rem;
+  width: 2rem;
+  background-image: url(../assets/user.png);
+  background-position: center;
+  background-size: cover;
+}
+.navBar .logoTwo {
+  height: 1.8rem;
+  width: 1.8rem;
+  background-image: url(../assets/book-50.png);
+  background-position: center;
+  background-size: cover;
+}/*# sourceMappingURL=navbar.css.map */

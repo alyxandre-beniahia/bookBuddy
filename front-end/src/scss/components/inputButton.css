@@ -1,0 +1,12 @@
+.custom-file-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-family: "Red Rose", sans-serif;
+  border-radius: 1rem;
+  background-color: #DCD6CF;
+  width: 6rem;
+  padding: 0.7rem;
+  color: black;
+}/*# sourceMappingURL=inputButton.css.map */

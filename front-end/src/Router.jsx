@@ -1,14 +1,16 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Collections from './pages/collections';
+import Home from './pages/Home';
+import Form from './pages/Formulaire';
+import Collections from './pages/Collections';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
-import Favorites from './pages/favorites';
-import Account from './pages/account';
+import Favorites from './pages/Favorites';
+import Account from './pages/Account';
 import Login from './pages/LoginPage';
 import Register from './pages/RegisterPage';
 import { RouteLayout } from './route';
-import Home from './pages/home';
+import './scss/main.css';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
     element: <RouteLayout/>,
     children: [
       {path: '/', element: <Home/>},
+      {path: '/formulaire', element: <Form/>},
       {path: '/collections', element: <Collections/>},
       {path: '/favorites', element: <Favorites/>},
       {path: '/account', element: <Account/>},

@@ -1,0 +1,76 @@
+footer {
+  background-color: #DCD6CF;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem 1rem 3rem;
+  height: 24rem;
+}
+footer .liens {
+  width: 50%;
+  height: 100%;
+}
+footer .liens .navBarFooter {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+footer .liens .navBarFooter a {
+  text-decoration: none;
+  list-style-type: none;
+  color: inherit;
+}
+footer .space {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+  width: 50%;
+  height: 90%;
+}
+footer .space .phrase2 {
+  font-size: 1.5rem;
+}
+footer .space .phrase2 h1 {
+  width: 100%;
+}
+footer .space .phrase {
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  display: flex;
+}
+footer .space .phrase #email {
+  height: 2.75rem;
+  width: 70%;
+  border-radius: 12.5px;
+  background-color: #DCD6CF;
+  background-image: url("C:/Users/InsaN/OneDrive/Documents/bookBuddy/front-end/src/assets/arrow.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 40px;
+  padding-right: 40px;
+  font-family: "Red Rose", sans-serif;
+  font-size: 15px;
+}
+footer .space .phrase #email::-moz-placeholder {
+  font-size: 1.5rem;
+  color: black;
+}
+footer .space .phrase #email::placeholder {
+  font-size: 1.5rem;
+  color: black;
+}
+footer .space .phrase .bouton {
+  border: none;
+  border-radius: 12px;
+  background-color: #272727;
+  color: #DCD6CF;
+  font-family: "Red Rose", sans-serif;
+  height: 43px;
+  width: 147px;
+  margin-left: 21rem;
+}/*# sourceMappingURL=footer.css.map */

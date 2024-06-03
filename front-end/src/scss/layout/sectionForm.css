@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap");
+.headerForm {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 2rem 2rem 2rem;
+  font-family: "Red Rose", sans-serif;
+}
+.headerForm .divHeadLeft {
+  width: 30%;
+}
+.headerForm .divHeadCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+.headerForm .divHeadCenter h2 {
+  text-align: start;
+  font-size: 2rem;
+  width: 70%;
+}
+.headerForm .divHeadRight {
+  width: 30%;
+}
+
+.formHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 6rem 0;
+}
+.formHome .inputTextWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+.formHome .inputTextWrapper .divInput {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #242424;
+  padding: 0.8rem 0.8rem 0.8rem 3rem;
+  width: 20rem;
+  margin: 1rem 0 1rem 0;
+  border-radius: 1.5rem;
+}
+.formHome .inputTextWrapper .divInput input {
+  background-color: #242424;
+  border: none;
+  width: 100%;
+}
+.formHome .inputTextWrapper .divInput input::-moz-placeholder {
+  color: white;
+}
+.formHome .inputTextWrapper .divInput input::placeholder {
+  color: white;
+}
+.formHome .inputTextWrapper .divInput input:valid {
+  color: white;
+}
+.formHome .inputTextWrapper .divInput input:focus {
+  outline: none;
+  border-color: transparent;
+  background-color: rgb(61, 61, 61);
+  border-radius: 1rem;
+}
+.formHome .inputTextWrapper select {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #242424;
+  padding: 0.8rem 0.8rem 0.8rem 3rem;
+  width: 20rem;
+  margin: 1rem 0 1rem 0;
+  border-radius: 1.5rem;
+  color: white;
+}
+.formHome .inputTextWrapper input {
+  background-color: #242424;
+  border: none;
+  width: 30%;
+}
+.formHome .inputTextWrapper input::-moz-placeholder {
+  color: white;
+}
+.formHome .inputTextWrapper input::placeholder {
+  color: white;
+}
+.formHome .inputTextWrapper input:valid {
+  color: white;
+}
+.formHome .inputTextWrapper input:focus {
+  outline: none;
+  border-color: transparent;
+  background-color: rgb(61, 61, 61);
+  border-radius: 1rem;
+}
+.formHome .uploadImgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+.formHome .uploadImgWrapper .divBackground {
+  background-color: #242424;
+  padding: 2rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.formHome .uploadImgWrapper .divBackground .imgUpload {
+  height: 10rem;
+  width: 10rem;
+  background-image: url(http://localhost:5173/assets/icons-img-500.png);
+  background-size: cover;
+}/*# sourceMappingURL=sectionForm.css.map */

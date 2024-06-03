@@ -1,0 +1,23 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .headCollection{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .wrapperCard{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0 2rem 0;
+    }
+}
+

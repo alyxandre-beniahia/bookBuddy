@@ -1,0 +1,24 @@
+.card {
+  height: 11.5rem;
+  width: 11.5rem;
+  background-color: #D9D9D9;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  color: black;
+  font-family: "Red Rose", sans-serif;
+}
+.card .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.card .card-head .favoris {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0 4rem 0;
+}
+.card .card-head .img-head {
+  height: 7rem;
+  width: 5rem;
+}/*# sourceMappingURL=card.css.map */

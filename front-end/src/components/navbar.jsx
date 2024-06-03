@@ -9,12 +9,13 @@ function Navbar(){
                 </div>
                 <div className='divCenter'>
                 <Link to="/">Accueil</Link>
-                <Link to="/form">Formulaire</Link>
+                <Link to="/formulaire">Formulaire</Link>
                 <Link to="/collections">Collections</Link>
                 <Link to="/favorites">Favoris</Link>
                 </div>
                 <div className='divRight'>
-                    <div className='logo'></div>
+                    <Link to="/login"><div className='logo'></div></Link>
+                    <Link to="/login"><div className='logoTwo'></div></Link>
                 </div>
             </nav>
     );

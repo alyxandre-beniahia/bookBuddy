@@ -1,0 +1,57 @@
+.bookList {
+  background-color: #242424;
+  color: #D9D9D9;
+  font-family: "Red Rose", sans-serif;
+  border-radius: 2.5rem;
+}
+.bookList .headBookList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 2rem 2rem 2rem;
+  font-family: inherit;
+}
+.bookList .headBookList .divHeadLeft {
+  width: 30%;
+}
+.bookList .headBookList .divHeadLeft h2 {
+  text-align: start;
+  font-size: 2rem;
+  width: 100%;
+}
+.bookList .headBookList .divHeadCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+.bookList .headBookList .divHeadCenter h2 {
+  width: 70%;
+}
+.bookList .headBookList .divHeadRight {
+  width: 30%;
+}
+.bookList .wrapperCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0 2rem 0;
+}
+.bookList .exploreOurGallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: inherit;
+}
+.bookList .exploreOurGallery h2 {
+  width: 40%;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.bookList .exploreOurGallery p {
+  font-size: 0.8rem;
+  margin-bottom: 4rem;
+}/*# sourceMappingURL=sectionBookList.css.map */

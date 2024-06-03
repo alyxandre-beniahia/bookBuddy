@@ -70,6 +70,36 @@
                 border-radius: 1rem;
             }
         }
+
+        select{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            background-color: #242424;
+            padding: 0.8rem 0.8rem 0.8rem 3rem;
+            width: 20rem;
+            margin: 1rem 0 1rem 0;
+            border-radius: 1.5rem;
+            color: white;
+        }
+
+        input{
+            background-color: #242424;
+            border: none;
+            width: 30%;
+        }
+        input::placeholder{
+            color: white;
+        }
+        input:valid{
+            color: white;
+        }
+        input:focus{
+            outline: none;
+            border-color: transparent;
+            background-color: rgb(61, 61, 61);
+            border-radius: 1rem;
+        }
       }
 
       .uploadImgWrapper{

@@ -34,9 +34,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-center mt-5">
-        <div className="col-md-6">
+        <div className="sectionLogin">
           <div className="card">
             <div className="card-header">
               <h4>Connexion</h4>
@@ -74,8 +72,6 @@ const LoginPage = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

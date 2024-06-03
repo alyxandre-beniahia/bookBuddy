@@ -1,1 +1,9 @@
-@import "./pages/home.scss";
+@import "components/navbar.scss";
+@import "components/footer.scss";
+@import "components/button.scss";
+@import "components/inputButton.scss";
+@import "components/card.scss";
+@import "pages/home.scss";
+@import "pages/collections.scss";
+@import "pages/favorites.scss";
+@import "pages/login.scss";

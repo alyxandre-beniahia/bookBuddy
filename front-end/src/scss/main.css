@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap");
+.navBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Red Rose", sans-serif;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: #7A7A7A;
+  border-radius: 1rem;
+}
+.navBar .divLeft, .navBar .divCenter, .navBar .divRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Red Rose", sans-serif;
+}
+.navBar .divLeft {
+  width: 15%;
+}
+.navBar .divLeft h1 {
+  text-transform: uppercase;
+}
+.navBar .divCenter {
+  justify-content: space-around;
+  width: 70%;
+  padding: 0 3rem;
+}
+.navBar .divCenter a {
+  text-decoration: none;
+  border: none;
+  color: inherit;
+}
+.navBar .divRight {
+  width: 15%;
+}
+.navBar a {
+  padding: 0;
+}
+.navBar .logo {
+  height: 2rem;
+  width: 2rem;
+  background-image: url(../assets/user.png);
+  background-position: center;
+  background-size: cover;
+}
+.navBar .logoTwo {
+  height: 1.8rem;
+  width: 1.8rem;
+  background-image: url(../assets/book-50.png);
+  background-position: center;
+  background-size: cover;
+}
+
+footer {
+  background-color: #DCD6CF;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem 1rem 3rem;
+  height: 24rem;
+}
+footer .liens {
+  width: 50%;
+  height: 100%;
+}
+footer .liens .navBarFooter {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+footer .liens .navBarFooter a {
+  text-decoration: none;
+  list-style-type: none;
+  color: inherit;
+}
+footer .space {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+  width: 50%;
+  height: 90%;
+}
+footer .space .phrase2 {
+  font-size: 1.5rem;
+}
+footer .space .phrase2 h1 {
+  width: 100%;
+}
+footer .space .phrase {
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  display: flex;
+}
+footer .space .phrase #email {
+  height: 2.75rem;
+  width: 70%;
+  border-radius: 12.5px;
+  background-color: #DCD6CF;
+  background-image: url("C:/Users/InsaN/OneDrive/Documents/bookBuddy/front-end/src/assets/arrow.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 40px;
+  padding-right: 40px;
+  font-family: "Red Rose", sans-serif;
+  font-size: 15px;
+}
+footer .space .phrase #email::-moz-placeholder {
+  font-size: 1.5rem;
+  color: black;
+}
+footer .space .phrase #email::placeholder {
+  font-size: 1.5rem;
+  color: black;
+}
+footer .space .phrase .bouton {
+  border: none;
+  border-radius: 12px;
+  background-color: #272727;
+  color: #DCD6CF;
+  font-family: "Red Rose", sans-serif;
+  height: 43px;
+  width: 147px;
+  margin-left: 21rem;
+}
+
+button {
+  border: none;
+  border-radius: 1rem;
+  background-color: #242424;
+  width: 10rem;
+  padding: 0.5rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.custom-file-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-family: "Red Rose", sans-serif;
+  border-radius: 1rem;
+  background-color: #DCD6CF;
+  width: 6rem;
+  padding: 0.7rem;
+  color: black;
+}
+
+.card {
+  height: 11.5rem;
+  width: 11.5rem;
+  background-color: #D9D9D9;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  color: black;
+  font-family: "Red Rose", sans-serif;
+}
+.card .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.card .card-head .favoris {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0 4rem 0;
+}
+.card .card-head .img-head {
+  height: 7rem;
+  width: 5rem;
+}
+
+.headerForm {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 2rem 2rem 2rem;
+  font-family: "Red Rose", sans-serif;
+}
+.headerForm .divHeadLeft {
+  width: 30%;
+}
+.headerForm .divHeadCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+.headerForm .divHeadCenter h2 {
+  text-align: start;
+  font-size: 2rem;
+  width: 70%;
+}
+.headerForm .divHeadRight {
+  width: 30%;
+}
+
+.formHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 6rem 0;
+}
+.formHome .inputTextWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+.formHome .inputTextWrapper .divInput {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #242424;
+  padding: 0.8rem 0.8rem 0.8rem 3rem;
+  width: 20rem;
+  margin: 1rem 0 1rem 0;
+  border-radius: 1.5rem;
+}
+.formHome .inputTextWrapper .divInput input {
+  background-color: #242424;
+  border: none;
+  width: 100%;
+}
+.formHome .inputTextWrapper .divInput input::-moz-placeholder {
+  color: white;
+}
+.formHome .inputTextWrapper .divInput input::placeholder {
+  color: white;
+}
+.formHome .inputTextWrapper .divInput input:valid {
+  color: white;
+}
+.formHome .inputTextWrapper .divInput input:focus {
+  outline: none;
+  border-color: transparent;
+  background-color: rgb(61, 61, 61);
+  border-radius: 1rem;
+}
+.formHome .inputTextWrapper select {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #242424;
+  padding: 0.8rem 0.8rem 0.8rem 3rem;
+  width: 20rem;
+  margin: 1rem 0 1rem 0;
+  border-radius: 1.5rem;
+  color: white;
+}
+.formHome .inputTextWrapper input {
+  background-color: #242424;
+  border: none;
+  width: 30%;
+}
+.formHome .inputTextWrapper input::-moz-placeholder {
+  color: white;
+}
+.formHome .inputTextWrapper input::placeholder {
+  color: white;
+}
+.formHome .inputTextWrapper input:valid {
+  color: white;
+}
+.formHome .inputTextWrapper input:focus {
+  outline: none;
+  border-color: transparent;
+  background-color: rgb(61, 61, 61);
+  border-radius: 1rem;
+}
+.formHome .uploadImgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+.formHome .uploadImgWrapper .divBackground {
+  background-color: #242424;
+  padding: 2rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.formHome .uploadImgWrapper .divBackground .imgUpload {
+  height: 10rem;
+  width: 10rem;
+  background-image: url(http://localhost:5173/assets/icons-img-500.png);
+  background-size: cover;
+}
+
+.bookList {
+  background-color: #242424;
+  color: #D9D9D9;
+  font-family: "Red Rose", sans-serif;
+  border-radius: 2.5rem;
+}
+.bookList .headBookList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 2rem 2rem 2rem;
+  font-family: inherit;
+}
+.bookList .headBookList .divHeadLeft {
+  width: 30%;
+}
+.bookList .headBookList .divHeadLeft h2 {
+  text-align: start;
+  font-size: 2rem;
+  width: 100%;
+}
+.bookList .headBookList .divHeadCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+.bookList .headBookList .divHeadCenter h2 {
+  width: 70%;
+}
+.bookList .headBookList .divHeadRight {
+  width: 30%;
+}
+.bookList .wrapperCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0 2rem 0;
+}
+.bookList .exploreOurGallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: inherit;
+}
+.bookList .exploreOurGallery h2 {
+  width: 40%;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.bookList .exploreOurGallery p {
+  font-size: 0.8rem;
+  margin-bottom: 4rem;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section .headCollection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+section .wrapperCard {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0 2rem 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section .headFavorites {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+section .wrapperCard {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0 2rem 0;
+}
+
+.sectionLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=main.css.map */
